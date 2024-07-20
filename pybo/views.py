@@ -23,3 +23,7 @@ def answer_create(request, question_id):
                         create_date=timezone.now())
 
     return redirect('pybo:detail', question_id=question.id)
+
+def question_create(request):
+    form = QuestionForm()
+    return render(request, 'pybo/question_form.html', {'form': form})
